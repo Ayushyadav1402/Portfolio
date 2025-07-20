@@ -1,6 +1,9 @@
 # 🚀 VS Code Setup Guide
 
 This guide will help you set up the Mysterious Portfolio project in VS Code for standalone development.
+## 🚀 Live Demo
+👉 [View Portfolio](https://portfolio-psi-swart-48.vercel.app/)
+
 
 ## 📋 Prerequisites
 
