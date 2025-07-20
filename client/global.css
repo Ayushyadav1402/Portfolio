@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Unica+One&family=Major+Mono+Display&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Mysterious Portfolio Theme - Deep space colors with neon accents
+   * HSL format required for Tailwind CSS compatibility
+   */
+  :root {
+    /* Mystery color palette - deep space theme */
+    --mystery-900: 240 15% 5%; /* Deep space black */
+    --mystery-800: 245 20% 8%; /* Midnight black */
+    --mystery-700: 250 25% 12%; /* Dark purple */
+    --mystery-600: 255 30% 18%; /* Royal purple */
+    --mystery-500: 260 35% 25%; /* Deep purple */
+    --mystery-400: 265 40% 35%; /* Medium purple */
+
+    /* Neon accent colors for highlights and interactions */
+    --neon-purple: 280 100% 70%; /* Electric purple */
+    --neon-blue: 200 100% 60%; /* Cyan blue */
+    --neon-cyan: 180 100% 50%; /* Pure cyan */
+    --neon-pink: 320 100% 75%; /* Hot pink */
+
+    /* Glass morphism effects */
+    --glass-dark: 240 15% 5% / 0.8; /* Semi-transparent dark */
+    --glass-light: 240 15% 15% / 0.6; /* Semi-transparent light */
+
+    /* Main theme colors - using mystery palette */
+    --background: 240 15% 5%; /* Deep space background */
+    --foreground: 240 10% 95%; /* Light text */
+
+    --card: 245 20% 8%; /* Card background */
+    --card-foreground: 240 10% 95%; /* Card text */
+
+    --popover: 245 20% 8%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 280 100% 70%; /* Neon purple primary */
+    --primary-foreground: 240 15% 5%;
+
+    --secondary: 250 25% 12%; /* Dark purple secondary */
+    --secondary-foreground: 240 10% 95%;
+
+    --muted: 245 20% 10%; /* Muted background */
+    --muted-foreground: 240 5% 70%; /* Muted text */
+
+    --accent: 200 100% 60%; /* Neon blue accent */
+    --accent-foreground: 240 15% 5%;
+
+    --destructive: 0 100% 60%; /* Red for errors */
+    --destructive-foreground: 240 10% 95%;
+
+    --border: 250 25% 15%; /* Subtle borders */
+    --input: 250 25% 12%; /* Input backgrounds */
+    --ring: 280 100% 70%; /* Focus rings */
+
+    --radius: 0.75rem; /* Rounded corners */
+  }
+
+  /* Dark mode is the default and only theme for this mysterious portfolio */
+  .dark {
+    --background: 240 15% 5%;
+    --foreground: 240 10% 95%;
+    --card: 245 20% 8%;
+    --card-foreground: 240 10% 95%;
+    --popover: 245 20% 8%;
+    --popover-foreground: 240 10% 95%;
+    --primary: 280 100% 70%;
+    --primary-foreground: 240 15% 5%;
+    --secondary: 250 25% 12%;
+    --secondary-foreground: 240 10% 95%;
+    --muted: 245 20% 10%;
+    --muted-foreground: 240 5% 70%;
+    --accent: 200 100% 60%;
+    --accent-foreground: 240 15% 5%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 240 10% 95%;
+    --border: 250 25% 15%;
+    --input: 250 25% 12%;
+    --ring: 280 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-mystery-900 text-foreground font-primary antialiased;
+    /* Always dark theme for mystery vibe */
+    color-scheme: dark;
+  }
+
+  /* Scrollbar styling for the mysterious theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-mystery-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-mystery-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-mystery-500;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect utility */
+  .glass-card {
+    @apply backdrop-blur-md bg-mystery-800/30 border border-mystery-600/20;
+  }
+
+  /* Neon glow effect for text and elements */
+  .neon-glow {
+    text-shadow:
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+
+  /* Floating animation for background elements */
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    @apply bg-gradient-to-r from-neon-purple via-neon-blue to-neon-cyan bg-clip-text text-transparent;
+  }
+
+  /* Interactive button with neon hover effect */
+  .neon-button {
+    @apply relative px-6 py-3 bg-transparent border border-neon-purple/50 text-neon-purple transition-all duration-300;
+
+    &:hover {
+      @apply border-neon-purple text-white shadow-lg;
+      box-shadow:
+        0 0 20px hsl(var(--neon-purple) / 0.5),
+        inset 0 0 20px hsl(var(--neon-purple) / 0.1);
+    }
+  }
+
+  /* Navigation underline slide effect */
+  .nav-link {
+    @apply relative transition-colors duration-300;
+
+    &::after {
+      content: "";
+      @apply absolute bottom-0 left-0 w-0 h-0.5 bg-neon-cyan transition-all duration-300;
+    }
+
+    &:hover::after {
+      @apply w-full;
+    }
+  }
+}
+
+@layer utilities {
+  /* Text sizes with typography scale */
+  .text-hero {
+    @apply text-6xl md:text-8xl font-bold font-unica;
+  }
+
+  .text-section {
+    @apply text-3xl md:text-4xl font-semibold font-unica;
+  }
+
+  .text-mono {
+    @apply font-mono text-sm md:text-base;
+  }
+}

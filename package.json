@@ -1,0 +1,53 @@
+{
+  "name": "mysterious-portfolio",
+  "version": "1.0.0",
+  "description": "A stunning, mysterious personal portfolio built with React, TypeScript, GSAP, and Tailwind CSS",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:client",
+    "build:client": "vite build",
+    "preview": "vite preview",
+    "start": "vite preview",
+    "test": "vitest --run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "gsap": "^3.12.5",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/node": "^22.5.5",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.11",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.5.3",
+    "vite": "^6.2.2",
+    "vitest": "^3.1.4",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.2",
+    "class-variance-authority": "^0.7.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "gsap",
+    "tailwindcss",
+    "mysterious",
+    "dark-theme",
+    "animations"
+  ],
+  "author": "Alex Blackwood",
+  "license": "MIT"
+}
